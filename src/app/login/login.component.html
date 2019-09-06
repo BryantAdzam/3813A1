@@ -1,0 +1,10 @@
+<div>
+    <form class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label class="sr-only">Username: </label>
+        <input class="form-control" placeholder="User Name" [(ngModel)]="username" name="username" required autofocus>
+        <button class="btn btn-lg btn-primary btn-block" (click)="check()" type="submit">Sign in</button>
+
+        <!-- <div id="errormsg" [ngClass]="{'showmessage': error, 'hidemessage': hidemessage}">User is not exist</div> -->
+    </form>
+</div>
