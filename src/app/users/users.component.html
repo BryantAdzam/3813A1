@@ -1,0 +1,27 @@
+<h2>
+    All Users</h2>
+
+<ul class="heroes">
+    <li *ngFor="let user of users">
+        <a routerLink="/userdetail/{{user.username}}">
+            <span class="badge">@@</span>{{user.username}}
+        </a>
+        <button class="delete" title="delete user" (click)="delete(user)">x</button>
+    </li>
+</ul>
+
+
+<div>
+    <label>User name:
+    <input #userName />
+  </label>
+    <br/>
+    <label>Email:
+      <input #userEmail />
+    </label>
+    <br/>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(userName.value,userEmail.value); userName.value=''; userEmail.value='' ">
+    Add
+  </button>
+</div>

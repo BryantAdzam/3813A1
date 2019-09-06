@@ -1,0 +1,22 @@
+<h2>
+    My Groups</h2>
+
+<div>
+    <label>Group name:
+      <input #groupName />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(groupName.value); groupName.value=''">
+      add
+    </button>
+</div>
+
+
+<ul class="groups">
+    <li *ngFor="let group of groups">
+        <a routerLink="/groupdetail/{{group.id}}">
+            <span class="badge">{{group.id}}</span>{{group.name}}
+        </a>
+        <button class="delete" title="delete group" (click)="delete(group)">x</button>
+    </li>
+</ul>
